@@ -5,21 +5,21 @@
 class Codeforge < Formula
   desc "A coding agent that works like you, on the Empryo TUI."
   homepage "https://github.com/codeliter/codeforge"
-  version "0.8.0"
+  version "0.8.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.8.0/codeforge_darwin_amd64.tar.gz"
-      sha256 "c15acd18f1d0c59811f961d3479fcabe260a09b16538565acb1e7067b990f584"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.8.1/codeforge_darwin_amd64.tar.gz"
+      sha256 "6e1f95b29ecf2555d03a7d6b1ad960492948d6a8cc47e040f43d7803024b6b03"
 
       define_method(:install) do
         bin.install "codeforge"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.8.0/codeforge_darwin_arm64.tar.gz"
-      sha256 "16b55b5ea2909f5a9ff7c1bc8cb2c07343eabf790a01675576c14f904d738741"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.8.1/codeforge_darwin_arm64.tar.gz"
+      sha256 "2ca4b712c5ea86589499bc4661ab7e8d69b8ccdd1d84ddcdaa5d088884d838c5"
 
       define_method(:install) do
         bin.install "codeforge"
@@ -29,15 +29,15 @@ class Codeforge < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.8.0/codeforge_linux_amd64.tar.gz"
-      sha256 "77c4aa188bebb2576c22ec10bd433e268b96b8eb632c39a6bf2b57ad39a82c74"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.8.1/codeforge_linux_amd64.tar.gz"
+      sha256 "14cf9f2d5f86cf0b2d905b25ac66d325ffec29e7558ee31e0cc05d69d7f495d9"
       define_method(:install) do
         bin.install "codeforge"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.8.0/codeforge_linux_arm64.tar.gz"
-      sha256 "a8cb6767d1e0927131071073571243f61a13142ccefa75781e2c5119739415f0"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.8.1/codeforge_linux_arm64.tar.gz"
+      sha256 "39aced629b0fc627f176a3ede5fdb8783b2d312726d44c427b9235e2ca727f42"
       define_method(:install) do
         bin.install "codeforge"
       end
