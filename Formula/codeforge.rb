@@ -5,45 +5,49 @@
 class Codeforge < Formula
   desc "A coding agent that works like you, on the Empryo TUI."
   homepage "https://github.com/codeliter/codeforge"
-  version "0.15.1"
+  version "0.15.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.15.1/codeforge_darwin_amd64.tar.gz"
-      sha256 "88ce4a922ea2e86f7665b5ae28bbbf596f0576f66ac1eb4bbf926872b9aed486"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.15.2/codeforge_darwin_amd64.tar.gz"
+      sha256 "00617e269f345abebc4b79ee2360d4c33f9d1ba06b6f5e652825256a3962241d"
 
       define_method(:install) do
         bin.install "codeforge"
         bin.install "codeforge-forms"
+        generate_completions_from_executable(bin/"codeforge", "completion")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.15.1/codeforge_darwin_arm64.tar.gz"
-      sha256 "c726973e13e5208cbbcc366697a114e1fd2ef4ac1a509288f786c5ab6ab7d99c"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.15.2/codeforge_darwin_arm64.tar.gz"
+      sha256 "501998c592d7e8cb2abc1f14d680b7152440ff9fd7fa8d36635e7632013dc237"
 
       define_method(:install) do
         bin.install "codeforge"
         bin.install "codeforge-forms"
+        generate_completions_from_executable(bin/"codeforge", "completion")
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.15.1/codeforge_linux_amd64.tar.gz"
-      sha256 "d8e5f7ef113808ce26de50e47d514284b470894abe70b10fd4038fb2e4dd91c5"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.15.2/codeforge_linux_amd64.tar.gz"
+      sha256 "dfe6703c0148bcd85594bf83c17c63137e86fd258d13ef1e149b9e2f96371b1a"
       define_method(:install) do
         bin.install "codeforge"
         bin.install "codeforge-forms"
+        generate_completions_from_executable(bin/"codeforge", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/codeliter/codeforge/releases/download/v0.15.1/codeforge_linux_arm64.tar.gz"
-      sha256 "f91f3281b2d55c6d30be42ff990dbc9c41981afc9f0940f2846949ef70ce2a6f"
+      url "https://github.com/codeliter/codeforge/releases/download/v0.15.2/codeforge_linux_arm64.tar.gz"
+      sha256 "43d93bd63d906862164d90d9a80d6195f5536c18fcd70d984f18156d49e861cf"
       define_method(:install) do
         bin.install "codeforge"
         bin.install "codeforge-forms"
+        generate_completions_from_executable(bin/"codeforge", "completion")
       end
     end
   end
